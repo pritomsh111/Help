@@ -27,10 +27,7 @@ if(!empty($_POST))
             ->setSubject('Hello')
             ->setFrom(array('noreply@lalbus.com' => 'Lalbus'))
             ->setTo(array('protimsh111@gmail.com'))
-            ->setBody('Please see this review given by 
-			Name: ' . $name . '
-			Email: ' . $email . '
-			Message: ' . $message . '');
+            ->setBody('Please see this review given by Name: ' . $name . ' Email: ' . $email . ' Message: ' . $message . '');
 
         $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, "ssl")
             ->setUsername('protimsh111')
