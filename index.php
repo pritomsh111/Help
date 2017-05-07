@@ -12,7 +12,7 @@ $result = mysqli_query($connect, $query);
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="Donation">
 		<meta name="keywords" content="easy donation, donation">
-		<meta name="author" content="বিন্দু">
+		<meta name="author" content="Team বিন্দু">
 		<title>Help!</title>  
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
@@ -29,9 +29,8 @@ $result = mysqli_query($connect, $query);
 			</div>
 		</div>
 	
-		<br /><br />
+		<br /><br />  
 		<div class="container" style="width:700px;">  
-			<h2 align="center"><font color="red" align="center">bKash For Donation: +8801687997516</font></h2>
 			<h3 align="center">Patients</h3>  
 			<br />  
 			<div class="table-responsive">
@@ -39,9 +38,10 @@ $result = mysqli_query($connect, $query);
 			<div id="employee_table">
 				<table class="table table-bordered">
 				<tr>
-					<th width="70%">Patient Name</th> 
+					<th width="70%">Patient's Name</th> 
 					<th width="15%">View</th>   
-					<th width="15%">Donate</th>  
+					<th width="15%">Donate</th>     
+					<th width="15%">Who Donated?</th>  
 				</tr>
 				<?php
 				while($row = mysqli_fetch_array($result))
@@ -54,6 +54,7 @@ $result = mysqli_query($connect, $query);
 				<td><label><a href="#" class="hover" id="<?php echo $row["id"]; ?>"><?php echo $row["name"]; ?></a></label></td>
 				<td><input type="button" name="view" value="View" id="<?php echo $row["id"]; ?>" class="btn btn-info btn-xs view_data" /></td>
 				<td><input type="button" name="reached" value="Donate" id="<?php echo $row["id"]; ?>" data-toggle="modal" data-target="#donate_money" class="btn btn-info btn-xs" /></td>
+				<td><input type="button" name="wd" value="WHO?" id="<?php echo $row["id"]; ?>" class="btn btn-info btn-xs viewd_data" /></td>
 				</tr>
 				<?php endif; ?>
 				<?php
@@ -148,7 +149,7 @@ $result = mysqli_query($connect, $query);
 				<ul class="list-inline">
 					<span>Connect with us:</span>
 					<br></br>
-					<li><a href="https://facebook.com/groups/2284448608446489/">
+					<li><a href="http://www.facebook.com">
 						<img src='http://www.womenactionmedia.org/cms/assets/themes/crate/images/social/facebook.png' />
 					</a></li>
 					<li><a href="http://www.twitter.com">
@@ -220,7 +221,7 @@ $result = mysqli_query($connect, $query);
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<button type="button" class="close" data-dismiss="modal1">&times;</button>
 				<h4 class="modal-title">Donate</h4>
 			</div>
 			<div class="modal-body">
@@ -498,6 +499,20 @@ $(document).ready(function(){
   var employee_id = $(this).attr("id");
   $.ajax({
    url:"select1.php",
+   method:"POST",
+   data:{employee_id:employee_id},
+   success:function(data){
+    $('#employee_detail').html(data);
+    $('#dataModal').modal('show');
+   }
+  });
+ });
+ 
+ $(document).on('click', '.viewd_data', function(){
+
+  var employee_id = $(this).attr("id");
+  $.ajax({
+   url:"select6.php",
    method:"POST",
    data:{employee_id:employee_id},
    success:function(data){
