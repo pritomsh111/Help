@@ -60,7 +60,8 @@ Message: ' . $message . '');
 			<tr>  
 					<th width="70%">Employee Name</th> 
 					<th width="15%">View</th>
-					<th width="15%">Donate</th>   
+					<th width="15%">Donate</th>
+					<th width="15%">Who Donated?</th>
 			</tr>
 		';
 		while($row = mysqli_fetch_array($result))
@@ -70,10 +71,11 @@ Message: ' . $message . '');
 			{
 				$output .= '
 					<tr>  
-						 <td><label><a href="#" class="hover" >' .$row["name"]. '</a></label></td>
-						 <td><input type="button" name="view" value="view" id="' . $row["id"] . '" class="btn btn-info btn-xs view_data" /></td>
-						  <td><input type="button" name="reached" value="Donate" id="' . $row["id"] . '" data-toggle="modal" data-target="#donate_money" class="btn btn-info btn-xs" /></td>
-				
+						<td><label><a href="#" class="hover" >' .$row["name"]. '</a></label></td>
+						<td><input type="button" name="view" value="view" id="' . $row["id"] . '" class="btn btn-info btn-xs view_data" /></td>
+						<td><input type="button" name="reached" value="Donate" id="' . $row["id"] . '" data-toggle="modal" data-target="#donate_money" class="btn btn-info btn-xs" /></td>
+						<td><input type="button" name="wd" value="WHO?" id="' . $row["id"] . '" class="btn btn-info btn-xs viewd_data" /></td>
+					
 					</tr>
 				';
 			}
