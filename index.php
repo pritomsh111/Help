@@ -39,7 +39,7 @@ $result = mysqli_query($connect, $query);
 			<div id="employee_table">
 				<table class="table table-bordered">
 				<tr>
-					<th width="70%">Patient's Name</th> 
+					<th width="70%">Patient Name</th> 
 					<th width="15%">View</th>   
 					<th width="15%">Donate</th>  
 				</tr>

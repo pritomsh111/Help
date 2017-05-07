@@ -41,12 +41,12 @@ if(!empty($_POST))
 		
 		$connect = mysqli_connect("localhost", "help", "help", "help");
 		$output .= '<label class="text-success">Donation On Process!</label>';
-		$select_query = "SELECT * FROM tbl_employee ORDER BY id DESC";
+		$select_query = "SELECT * FROM tbl_employee";
 		$result = mysqli_query($connect, $select_query);
 		$output .= '
 		<table class="table table-bordered">  
 					<tr>  
-						<th width="70%">Employee Name</th> 
+						<th width="70%">Patient Name</th> 
 						<th width="15%">View</th>
 						<th width="15%">Donate</th> 
 					</tr>
