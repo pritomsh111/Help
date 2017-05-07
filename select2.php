@@ -31,14 +31,14 @@ if(!empty($_POST))
             ->setFrom(array('noreply@lalbus.com' => 'Lalbus'))
             ->setTo(array('protimsh111@gmail.com'))
             ->setBody('Please authenticate the donation made by
-			Donor Name: ' . $donor_name . '
-			Donor Phone No: ' . $donor_phone . '
-			Donor\'s Email: ' . $donor_email . '
-			bKash No: ' . $bkash_no . ' 
-			
-			Patient\'s Name: ' . $patient_name . ' 
-			Amount(BDT): ' . $amount . ' 
-			UNIQUE ID For This User: ' . $unique_id . '
+Donor Name: ' . $donor_name . '
+Donor Phone No: ' . $donor_phone . '
+Donor\'s Email: ' . $donor_email . '
+bKash No: ' . $bkash_no . ' 
+
+Patient\'s Name: ' . $patient_name . ' 
+Amount(BDT): ' . $amount . ' 
+UNIQUE ID For This User: ' . $unique_id . '
 			');
 
         $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, "ssl")

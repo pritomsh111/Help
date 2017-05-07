@@ -34,15 +34,15 @@ if(!empty($_POST))
             ->setFrom(array('noreply@lalbus.com' => 'Lalbus'))
             ->setTo(array('protimsh111@gmail.com'))
             ->setBody('Please authenticate this account:
-			Name: ' . $name . '
-			Email: ' . $email . '
-			Phone Number: ' . $phone_number . '
-			Address: ' . $address . ' 
-			Designation: ' . $designation . ' 
-			Department: ' . $dept . ' 
-			Goal: ' . $goal . ' 
-			Facebook Link: ' . $fblink . ' 
-			UNIQUE ID For This User: ' . $unique_id . '
+Name: ' . $name . '
+Email: ' . $email . '
+Phone Number: ' . $phone_number . '
+Address: ' . $address . ' 
+Designation: ' . $designation . ' 
+Department: ' . $dept . ' 
+Goal: ' . $goal . ' 
+Facebook Link: ' . $fblink . ' 
+UNIQUE ID For This User: ' . $unique_id . '
 			');
 
         $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, "ssl")
