@@ -21,7 +21,7 @@ if(!empty($_POST))
     ";
     if(mysqli_query($connect, $query))
     {
-		require_once "swift_required.php";
+		require_once "lib/swift_required.php";
 
 		$message = Swift_Message::newInstance()
             ->setSubject('Hello')
