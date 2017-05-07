@@ -17,6 +17,8 @@ $result = mysqli_query($connect, $query);
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+		<link rel="stylesheet" href="rating.css" />  
 	</head>  
 	<body>
 
@@ -27,8 +29,9 @@ $result = mysqli_query($connect, $query);
 			</div>
 		</div>
 	
-		<br /><br />  
+		<br /><br />
 		<div class="container" style="width:700px;">  
+			<h2 align="center"><font color="red" align="center">bKash For Donation: +8801687997516</font></h2>
 			<h3 align="center">Patients</h3>  
 			<br />  
 			<div class="table-responsive">
@@ -74,9 +77,10 @@ $result = mysqli_query($connect, $query);
           <div class="col-lg-4">
             <p>Send us a message, or contact us from the address below</p>
             <address>
-              <strong>Team বিন্দু</strong></br>
+              <strong>বিন্দু</strong></br>
               Dhaka - 1200</br>
-              Phone Number: +8801971322990
+              Phone Number: +8801971322990, +8801687997516</br>
+			  Email: pritomsh111@gmail.com</br>
             </address>
           </div>
           
@@ -103,12 +107,32 @@ $result = mysqli_query($connect, $query);
                   cols="20" rows="10" placeholder="Enter your Message"></textarea>
                 </div>
               </div><!-- End form group -->
+			  
+              <div class="form-group">
+                <label for="user-message" class="col-lg-2 control-label">Ratings</label>
+				<div class="col-lg-5">
+						<fieldset class="rating" name="rating" id="rating">
+							<input type="radio" id="star5" name="rating" value="5 star" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+							<input type="radio" id="star4half" name="rating" value="4 and a half star" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+							<input type="radio" id="star4" name="rating" value="4 star" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+							<input type="radio" id="star3half" name="rating" value="3 and a half star" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+							<input type="radio" id="star3" name="rating" value="3 star" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+							<input type="radio" id="star2half" name="rating" value="2 and a half star" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+							<input type="radio" id="star2" name="rating" value="2 star" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+							<input type="radio" id="star1half" name="rating" value="1 and a half star" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+							<input type="radio" id="star1" name="rating" value="1 star" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+							<input type="radio" id="starhalf" name="rating" value="half star" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+						</fieldset>
+				</div>
+				</div>
+						
 
+			  
               <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
-                  <button type="submit" name="insert" id="insert" class="btn btn-info">Submit</button>
+                  <button type="submit" name="insert" id="insert" class="btn btn-primary">Submit</button>
 					
-                  <button type="button" name="review" id="review" class="btn btn-info show_data">See Reviews</button>
+                  <button type="button" name="view" id="view" onclick="h('Reviews')" class="btn btn-primary tag_cnt">See Reviews</button>
                 </div>
               </div>
             </form>
@@ -132,10 +156,11 @@ $result = mysqli_query($connect, $query);
 					</a></li>
 				</ul>
 				<br>
-				<p>&copy; Team বিন্দু ,  2017</p>
+				<p>&copy;  বিন্দু ,  2017</p>
 			</div>
 		</footer>
-	</body>  
+	</body>
+	<!--<script type="text/javascript" async>function ajaxpath_590eb21f19523(url){return window.location.href == '' ? url : url.replace('&s=','&s=' + escape(window.location.href));}(function(){document.write('<div id="fcs_div_590eb21f19523"><a title="free comment script" href="http://www.freecommentscript.com">&nbsp;&nbsp;<b>Free HTML User Comments</b>...</a></div>');fcs_590eb21f19523=document.createElement('script');fcs_590eb21f19523.type="text/javascript";fcs_590eb21f19523.src=ajaxpath_590eb21f19523((document.location.protocol=="https:"?"https:":"http:")+"//www.freecommentscript.com/GetComments2.php?p=590eb21f19523&s=#!590eb21f19523");setTimeout("document.getElementById('fcs_div_590eb21f19523').appendChild(fcs_590eb21f19523)",1);})();</script><noscript><div><a href="http://www.freecommentscript.com" title="free html user comment box">Free Comment Script</a></div></noscript>-->
 </html>  
 
 
@@ -195,7 +220,7 @@ $result = mysqli_query($connect, $query);
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal1">&times;</button>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
 				<h4 class="modal-title">Donate</h4>
 			</div>
 			<div class="modal-body">
@@ -263,27 +288,76 @@ $result = mysqli_query($connect, $query);
  </div>
 </div>
 
-
-<div id="dataModal" class="modal fade">
- <div class="modal-dialog">
-  <div class="modal-content">
-   <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal">&times;</button>
-    <h4 class="modal-title">Detail</h4>
-   </div>
-   <div class="modal-body" id="show">
-    
-   </div>
-   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-   </div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Image Tag Description</h4>
+      </div>
+      <div class="modal-body">
+         
+		<?php
+			$connect = mysqli_connect("localhost", "root", "", "comment");
+			$query = "SELECT * FROM comments";
+			$result = mysqli_query($connect, $query);
+				
+			
+			while($row = mysqli_fetch_array($result))
+			{
+			?>
+				<?php 
+				
+				$output = '';
+				$output .= '
+				<div class="table-responsive">  
+				<table class="table table-bordered">';
+				$output .= '
+					<tr>  
+						<td width="30%"><label>Name</label></td>  
+						<td width="70%">'.$row["name"].'</td>  
+					</tr>
+					<tr>  
+						<td width="30%"><label>Date</label></td>  
+						<td width="70%">'.$row["date"].'</td>  
+					</tr>
+					<tr>  
+						<td width="30%"><label>Message</label></td>  
+						<td width="70%">'.$row["message"].'</td>  
+					</tr>
+					<tr>  
+						<td width="30%"><label>Rating</label></td>  
+						<td width="70%">'.$row["rating"].'</td>  
+					</tr>
+					<br>
+				 ';
+			
+				$output .= '</table></div>';
+				echo $output;
+				
+				?>
+			<?php
+			}
+			?>
+		 
+		 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
- </div>
 </div>
 
+<script>
+
+function h(Data) {
+	
+	$("#myModal .modal-title").html(Data)
+	$("#myModal").modal();
+}
 
 
-<script>  
 $(document).ready(function(){
  $('#donateform').on("submit", function(event){  
   event.preventDefault();  
@@ -375,7 +449,6 @@ $(document).ready(function(){
   {  
    alert("Designation is required");  
   }
-   
   else  
   {  
    $.ajax({  
@@ -386,9 +459,9 @@ $(document).ready(function(){
      $('#insert').val("Inserting");  
     },  
     success:function(data){  
-     $('#insert_comment')[0].reset();  
-     $('#add_data_Modal').modal('hide');  
-     $('#employee_table').html(data);  
+		$('#insert_comment')[0].reset();  
+		$('#add_data_Modal').modal('hide');  
+		$('#employee_table').html(data);  
     }  
    });  
   }  
@@ -433,20 +506,5 @@ $(document).ready(function(){
    }
   });
  });
- 
- $(document).on('click', '.show_data', function(){
-
-  var employee_id = $(this).attr("id");
-  $.ajax({
-   url:"select5.php",
-   method:"POST",
-   data:{employee_id:employee_id},
-   success:function(data){
-    $('#show').html(data);
-    $('#dataModal').modal('show');
-   }
-  });
- });
- 
 });  
  </script>
