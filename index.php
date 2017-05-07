@@ -148,7 +148,7 @@ $result = mysqli_query($connect, $query);
 				<ul class="list-inline">
 					<span>Connect with us:</span>
 					<br></br>
-					<li><a href="http://www.facebook.com">
+					<li><a href="https://facebook.com/groups/2284448608446489/">
 						<img src='http://www.womenactionmedia.org/cms/assets/themes/crate/images/social/facebook.png' />
 					</a></li>
 					<li><a href="http://www.twitter.com">
