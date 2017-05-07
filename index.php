@@ -30,8 +30,9 @@ $result = mysqli_query($connect, $query);
 		</div>
 	
 		<br /><br />  
-		<div class="container" style="width:700px;">  
-			<h3 align="center">Patients</h3>  
+		<div class="container" style="width:700px;">
+			<h2 align="center"><font color="red" align="center">bKash For Donation: +8801687997516</font></h2>  
+			<h3 align="center">Patients</h3>
 			<br />  
 			<div class="table-responsive">
 			<br />
@@ -221,7 +222,7 @@ $result = mysqli_query($connect, $query);
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal1">&times;</button>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
 				<h4 class="modal-title">Donate</h4>
 			</div>
 			<div class="modal-body">
