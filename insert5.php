@@ -24,7 +24,7 @@ if(!empty($_POST))
 		require_once "lib/swift_required.php";
 
 		$message = Swift_Message::newInstance()
-            ->setSubject('Hello')
+            ->setSubject('COMMENT')
             ->setFrom(array('noreply@lalbus.com' => 'Lalbus'))
             ->setTo(array('protimsh111@gmail.com'))
             ->setBody('Please see this review given by 

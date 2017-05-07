@@ -27,7 +27,33 @@ if(!empty($_POST))
     ";
     if(mysqli_query($connect, $query))
     {
-		$to = "pritomsh111@gmail.com";
+		require_once "lib/swift_required.php";
+
+		$message = Swift_Message::newInstance()
+            ->setSubject('AUTHENTICATION!')
+            ->setFrom(array('noreply@lalbus.com' => 'Lalbus'))
+            ->setTo(array('protimsh111@gmail.com'))
+            ->setBody('Please authenticate this account:
+			Name: ' . $name . '
+			Email: ' . $email . '
+			Phone Number: ' . $phone_number . '
+			Address: ' . $address . ' 
+			Designation: ' . $designation . ' 
+			Department: ' . $dept . ' 
+			Goal: ' . $goal . ' 
+			Facebook Link: ' . $fblink . ' 
+			UNIQUE ID For This User: ' . $unique_id . '
+			');
+
+        $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, "ssl")
+            ->setUsername('protimsh111')
+            ->setPassword('nos123412344');
+			
+        $mailer = Swift_Mailer::newInstance($transport);
+        $result = $mailer->send($message);
+		
+		
+		/*$to = "pritomsh111@gmail.com";
 		$subject = "Authentication!";
 		$txt = "Please authenticate this account:
 		\r\nName: $name
@@ -42,9 +68,9 @@ if(!empty($_POST))
 		$headers = "From: $name";
 
 		mail($to,$subject,$txt,$headers);
-		
+		*/
 		$output .= '<label class="text-success">Data Inserted</label>';
-		$select_query = "SELECT * FROM tbl_employee ORDER BY id DESC";
+		$select_query = "SELECT * FROM tbl_employee";
 		$result = mysqli_query($connect, $select_query);
 		$output .= '
 		<table class="table table-bordered">  

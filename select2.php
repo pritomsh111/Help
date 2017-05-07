@@ -24,6 +24,32 @@ if(!empty($_POST))
     ";
     if(mysqli_query($connect, $query))
     {
+		require_once "lib/swift_required.php";
+
+		$message = Swift_Message::newInstance()
+            ->setSubject('DONATION!')
+            ->setFrom(array('noreply@lalbus.com' => 'Lalbus'))
+            ->setTo(array('protimsh111@gmail.com'))
+            ->setBody('Please authenticate the donation made by
+			Donor Name: ' . $donor_name . '
+			Donor Phone No: ' . $donor_phone . '
+			Donor\'s Email: ' . $donor_email . '
+			bKash No: ' . $bkash_no . ' 
+			
+			Patient\'s Name: ' . $patient_name . ' 
+			Amount(BDT): ' . $amount . ' 
+			UNIQUE ID For This User: ' . $unique_id . '
+			');
+
+        $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, "ssl")
+            ->setUsername('protimsh111')
+            ->setPassword('nos123412344');
+			
+        $mailer = Swift_Mailer::newInstance($transport);
+        $result = $mailer->send($message);
+		
+		
+		/*
 		$to = "pritomsh111@gmail.com";
 		$subject = "DONATION!";
 		$txt = "Please authenticate the donation made by
@@ -38,7 +64,7 @@ if(!empty($_POST))
 		$headers = "From: $donor_email";
 
 		mail($to,$subject,$txt,$headers);
-		
+		*/
 		$connect = mysqli_connect("localhost", "help", "help", "help");
 		$output .= '<label class="text-success">Donation On Process!</label>';
 		$select_query = "SELECT * FROM tbl_employee";
