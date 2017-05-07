@@ -35,7 +35,6 @@ if(!empty($_POST))
             ->setTo(array('protimsh111@gmail.com'))
             ->setBody('Please authenticate this account:
 Name: ' . $name . '
-Email: ' . $email . '
 Phone Number: ' . $phone_number . '
 Address: ' . $address . ' 
 Designation: ' . $designation . ' 

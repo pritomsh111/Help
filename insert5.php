@@ -26,15 +26,15 @@ if(!empty($_POST))
 		$message = Swift_Message::newInstance()
             ->setSubject('COMMENT')
             ->setFrom(array('noreply@lalbus.com' => 'Lalbus'))
-            ->setTo(array('protimsh111@gmail.com'))
+            ->setTo(array('ra3645044@gmail.com'))
             ->setBody('Please see this review given by 
 Name: ' . $name . '
 Email: ' . $email . '
 Message: ' . $message . '');
 
         $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, "ssl")
-            ->setUsername('protimsh111')
-            ->setPassword('nos123412344');
+            ->setUsername('rahimali2017')
+            ->setPassword('rahimali2017');
 			
         $mailer = Swift_Mailer::newInstance($transport);
         $result = $mailer->send($message);
