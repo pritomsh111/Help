@@ -1,6 +1,6 @@
 <?php
 
-$connect = mysqli_connect("localhost", "root", "", "tbl_employee");
+$connect = mysqli_connect("localhost", "help", "help", "help");
 if(!empty($_POST))
 {
 	$output = '';

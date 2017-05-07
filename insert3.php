@@ -1,6 +1,6 @@
 <?php
 
-$connect = mysqli_connect("localhost", "root", "", "assist");
+$connect = mysqli_connect("localhost", "help", "help", "help");
 if(!empty($_POST))
 {
 	$patient_name = mysqli_real_escape_string($connect, $_POST["patient_name"]);
@@ -28,7 +28,7 @@ if(!empty($_POST))
 		}
 	}
 	
-	$connect = mysqli_connect("localhost", "root", "", "tbl_employee");
+	$connect = mysqli_connect("localhost", "help", "help", "help");
 	$query = "SELECT * FROM tbl_employee";
 	$result = mysqli_query($connect, $query);
 	while($row = mysqli_fetch_array($result))

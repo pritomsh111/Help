@@ -1,6 +1,6 @@
 <?php
 
-$connect = mysqli_connect("localhost", "root", "", "assist");
+$connect = mysqli_connect("localhost", "help", "help", "help");
 if(!empty($_POST))
 {
 	$output = '';
@@ -39,7 +39,7 @@ if(!empty($_POST))
 
 		mail($to,$subject,$txt,$headers);
 		
-		$connect = mysqli_connect("localhost", "root", "", "tbl_employee");
+		$connect = mysqli_connect("localhost", "help", "help", "help");
 		$output .= '<label class="text-success">Donation On Process!</label>';
 		$select_query = "SELECT * FROM tbl_employee ORDER BY id DESC";
 		$result = mysqli_query($connect, $select_query);

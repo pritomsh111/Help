@@ -3,7 +3,7 @@ if(isset($_POST["employee_id"]))
 {
 	$output = '';
 	$pb = '';
-	$connect = mysqli_connect("localhost", "root", "", "tbl_employee");
+	$connect = mysqli_connect("localhost", "help", "help", "help");
 	$query = "SELECT * FROM tbl_employee WHERE id = '".$_POST["employee_id"]."'";
 	$result = mysqli_query($connect, $query);
 	$output .= '

@@ -1,6 +1,6 @@
 <?php  
 
-$connect = mysqli_connect("localhost", "root", "", "tbl_employee");
+$connect = mysqli_connect("localhost", "help", "help", "help");
 $query = "SELECT * FROM tbl_employee";
 $result = mysqli_query($connect, $query);
 
@@ -12,7 +12,7 @@ $result = mysqli_query($connect, $query);
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="Donation">
 		<meta name="keywords" content="easy donation, donation">
-		<meta name="author" content="Team বিন্দু">
+		<meta name="author" content="বিন্দু">
 		<title>Help!</title>  
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
@@ -298,7 +298,7 @@ $result = mysqli_query($connect, $query);
       <div class="modal-body">
          
 		<?php
-			$connect = mysqli_connect("localhost", "root", "", "comment");
+			$connect = mysqli_connect("localhost", "help", "help", "help");
 			$query = "SELECT * FROM comments";
 			$result = mysqli_query($connect, $query);
 				

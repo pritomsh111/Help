@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST["id"]))
 {
-	$connect = mysqli_connect("localhost", "root", "", "tbl_employee");
+	$connect = mysqli_connect("localhost", "help", "help", "help");
 	$output = '';
 	$pb = '';
 	$query = "SELECT * FROM tbl_employee WHERE id='".$_POST["id"]."'";
