@@ -9,7 +9,7 @@ if(isset($_POST["id"]))
 	while($row = mysqli_fetch_array($result))
 	{
 		$output = '
-			<p><img src="/'.$row['image'].'" class="img-responsive img-thumbnail" /></p>
+			<p><img src="'.$row['image'].'" class="img-responsive img-thumbnail" /></p>
 			<p><label>Name : '.$row['name'].'</label></p>
 			<p><label>Designation : </label>'.$row['designation'].'</p>
 			<p><label>Department : </label>'.$row['dept'].'</p>

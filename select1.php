@@ -18,7 +18,7 @@ if(isset($_POST["employee_id"]))
 		$percent = round(($current/$total) * 100);
 		$output .= '
 		
-		<p><img src="/'.$row['image'].'" class="img-responsive img-thumbnail" /></p>
+		<p><img src="'.$row['image'].'" class="img-responsive img-thumbnail" /></p>
 		
 		<tr>  
             <td width="30%"><label>Name</label></td>  
