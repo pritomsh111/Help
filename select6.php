@@ -15,19 +15,23 @@ if(isset($_POST["employee_id"]))
 		$result = mysqli_query($connect, $query);
 		while($row = mysqli_fetch_array($result))
 		{
-			$output .= '
-			<div class="table-responsive">  
-			<table class="table table-bordered">
-			<tr>  
-            <td width="30%"><label>Donor\'s Name</label></td>  
-            <td width="70%">'.$row["donor_name"].'</td>  
-			</tr>
-			<tr>
-            <td width="30%"><label>Amount(BDT)</label></td>  
-            <td width="70%">'.$row["amount"].'</td>  
-			</tr>
-			<br>
-		';
+			$suc = $row['success'];
+			if($suc=='Done')
+			{
+					$output .= '
+					<div class="table-responsive">  
+					<table class="table table-bordered">
+					<tr>  
+					<td width="30%"><label>Donor\'s Name</label></td>  
+					<td width="70%">'.$row["donor_name"].'</td>  
+					</tr>
+					<tr>
+					<td width="30%"><label>Amount(BDT)</label></td>  
+					<td width="70%">'.$row["amount"].'</td>  
+					</tr>
+					<br>
+				';
+			}
 		}
 		//<img src="data:image/jpeg;base64,'.base64_encode($row['name'] ).'" height="200" width="200" class="img-thumnail" />
 		

@@ -30,7 +30,7 @@ $result = mysqli_query($connect, $query);
 		</div>
 	
 		<br /><br />  
-		<div class="container" style="width:70% !important;">
+		<div class="container" style="width:65% !important;">
 			<h2 align="center"><font color="red" align="center">bKash For Donation: +8801687997516</font></h2>  
 			<h3 align="center">Patients</h3>
 			<br />  
