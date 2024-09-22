@@ -2,7 +2,7 @@
 
 ## Project Description
 
-"Help Us!" is a digital fundraising platform aimed at helping patients in need of medical emergency care. The website allows users to donate to listed patients, ensuring a secure, user-friendly, and transparent donation process. This project was developed using JavaScript, PHP, HTML, and CSS, and it aims to make the donation process in Bangladesh more automated and accessible.
+"Help Us!" is a digital fundraising platform aimed at helping patients in need of medical emergency care. The website allows users to donate to listed patients, ensuring a secure, user-friendly, and transparent donation process. We developed this project using JavaScript, PHP, HTML, and CSS to enhance the automation and accessibility of the donation process in Bangladesh.
 
 ## Motivation
 
@@ -25,8 +25,8 @@ The project was motivated by:
 The website consists of the following key components:
 1. **Website Frontend:** Built using HTML, CSS, and JavaScript for a responsive and interactive user experience.
 2. **Donation System:** PHP-based backend that handles secure donations.
-3. **Admin Panel:** Admins can add new patients, manage donations, and view progress.
-4. **User Authentication:** Secure login and authentication mechanisms for both donors and admins.
+3. **Admin Panel:** Administrators can add new patients, manage donations, and view progress.
+4. **User Authentication:** Secure login and authentication mechanisms for both donors and administrators.
 
 ## Future Plans
 
